@@ -60,7 +60,7 @@
 			for(var method in methods) {
 				if(method !== 'connection') {
 					(function(method) {
-						socket.on(method, function(data) {
+						client.on(method, function(data) {
 							Ctrl.call(method, {'socket': socket, 'client': client, 'data': data});
 						});
 					})(method);
