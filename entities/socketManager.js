@@ -42,7 +42,7 @@
 			namespace.on('connection', function(sock) {
 				for(var i = 0; i < controllers.length; i++) {
 					var controller = controllers[i];
-					bindSocketController(sock, controllers);
+					bindSocketController(namespace, sock, controllers);
 
 					var Ctrl = $controllerManager.$config.getController(controller);
 					var methods = Ctrl.getMethods();
@@ -53,7 +53,7 @@
 			});
 		};
 
-		function bindSocketController(socket, controller) {
+		function bindSocketController(socket, client, controller) {
 			var Ctrl = $controllerManager.$config.getController(controller);
 			var methods = Ctrl.getMethods();
 			
@@ -61,7 +61,7 @@
 				if(method !== 'connection') {
 					(function(method) {
 						socket.on(method, function(data) {
-							Ctrl.call(method, {'socket': socket, 'client': socket, 'data': data});
+							Ctrl.call(method, {'socket': socket, 'client': client, 'data': data});
 						});
 					})(method);
 				}
@@ -81,7 +81,7 @@
 				socket.on('connection', function(sock) {
 					for(var i = 0; i < controllers.length; i++) {
 						var controller = controllers[i];
-						bindSocketController(sock, controllers[i]);
+						bindSocketController(socket, sock, controllers[i]);
 
 						var Ctrl = $controllerManager.$config.getController(controller);
 						var methods = Ctrl.getMethods();
