@@ -1,6 +1,6 @@
 {
   "name": "snooze-socket",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Entities for using SocketIO in SnoozeJS",
   "main": "main.js",
   "scripts": {
