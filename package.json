@@ -1,0 +1,40 @@
+{
+  "name": "snooze-socket",
+  "version": "1.0.0",
+  "description": "Entities for using SocketIO in SnoozeJS",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamchairs/snooze-socket.git"
+  },
+  "keywords": [
+    "snooze",
+    "snoozejs",
+    "socketio",
+    "socket",
+    "express",
+    "expressjs"
+  ],
+  "author": "Micah Williamson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamchairs/snooze-socket/issues"
+  },
+  "homepage": "https://github.com/iamchairs/snooze-socket",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "mocha": "^2.1.0",
+    "should": "^4.5.0",
+    "snooze": "^1.0.0-alpha.4",
+    "socket.io-client": "^1.2.1"
+  },
+  "dependencies": {
+    "snooze-baselib": "^1.0.0-alpha.3",
+    "snooze-controller": "^1.0.3",
+    "socket.io": "^1.2.1"
+  }
+}
