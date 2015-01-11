@@ -59,9 +59,11 @@
 			
 			for(var method in methods) {
 				if(method !== 'connection') {
-					socket.on(method, function(data) {
-						Ctrl.call(method, {'socket': socket, 'client': socket, 'data': data});
-					});
+					(function(method) {
+						socket.on(method, function(data) {
+							Ctrl.call(method, {'socket': socket, 'client': socket, 'data': data});
+						});
+					})(method);
 				}
 			}
 		};
